@@ -27,7 +27,7 @@ const userSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
-        joinRequest(state: UserState, payload){
+        joinRequest(state: UserState, payload) {
             state.loading = true; 
         },
         joinSuccess(state: UserState, {payload}){ 
@@ -39,8 +39,8 @@ const userSlice = createSlice({
             state.data = payload;
             state.loading = false;
         },
-        loginRequest(state: UserState, payload){
-            alert('진행 2: 로그인 리듀서 내부 ') 
+        loginRequest(state: UserState, payload) {
+            alert('진행 2 ') 
             state.loading = true; 
         },
         loginSuccess(state: UserState, {payload}){ 
@@ -51,8 +51,28 @@ const userSlice = createSlice({
         loginFailure(state: UserState, {payload}){ 
             state.data = payload;
             state.loading = false;
+        },
+        logoutRequest(state: UserState, payload) {
+            state.loading = false; 
+        },
+        logoutSuccess(state: UserState){ 
+            state.loading = false;
+            localStorage.clear()
+            window.location.href = '/'
+        },
+        delUserRequest(state: UserState, payload) {
+            alert('진행 2 ') 
+            state.loading = true; 
+        },
+        delUserSuccess(state: UserState, {payload}){ 
+            state.data = [...state.data, payload]
+            state.loading = false;
+            
+        },
+        delUserFailure(state: UserState, {payload}){ 
+            state.data = payload;
+            state.loading = false;
         }
-        
     }
 })
 const { reducer, actions } = userSlice

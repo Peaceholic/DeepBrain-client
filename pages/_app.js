@@ -19,7 +19,3 @@ const App = ({ Component, pageProps}) => {
 }
 
 export default wrapper.withRedux(App)
-
-
-
-
