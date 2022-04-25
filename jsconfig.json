@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./pages"
+    },
+    "include": [
+        "pages/**/*.js",
+        "redux/**/*.ts"
+, "pages/user/api/userApijs"      ],
+      "exclude": [
+        "node_modules"
+      ]
+}
