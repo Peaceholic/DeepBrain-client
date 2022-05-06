@@ -17,7 +17,6 @@ export interface CompanyState{
     error: any;
 }
 
-
 const initialState: CompanyState = {
     loading: false,
     data: [],
@@ -65,6 +64,7 @@ const companySlice = createSlice({
         },
     },
 })
+
 const { reducer, actions } = companySlice
 export const companyActions = actions
 export default reducer

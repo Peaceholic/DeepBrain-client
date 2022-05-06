@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
+
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+
 import tableStyles from "./../../styles/table.module.css";
 
 export default function Nav() {
@@ -39,13 +41,12 @@ export default function Nav() {
           <td>
             {basicSubTitle.map(function (item, idx) {
               return (
-                <>
-                  <Button key={idx} style={{ margin: 5, float: "left" }}
-                    onClick={(e) => { e.preventDefault(); onNavigating(basicUrls[idx]); }}
-                    children={item} />
-                </>)
+                <Button key={idx} style={{ margin: 5, float: "left" }}
+                  onClick={(e) => { e.preventDefault(); onNavigating(basicUrls[idx]); }}
+                  children={item} />
+              )
             })}
-            <div style={{ margin: 5, float: "right" }}>
+            <div style={{ margin: 5, float: "left" }}>
               <SubMenu title={"User"} urls={userUrls} subTitles={userSubTitle} />
             </div>
           </td>

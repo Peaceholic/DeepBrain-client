@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { companyActions } from "../../redux/reducers/companyReducer.ts";
+
+import Button from '@mui/material/Button';
 import tableStyles from "../../styles/table.module.css"
 
 const AddCompany = () => {
@@ -43,6 +45,7 @@ const AddCompany = () => {
     };
     return (
         <form onSubmit={addCompanyHandler}>
+
             <table className={tableStyles.table}>
                 <thead>
                     <tr>
@@ -159,7 +162,7 @@ const AddCompany = () => {
 
                     <tr>
                         <td colSpan={2}>
-                            <button type="submit">등록</button>
+                            <Button type="submit">등록</Button>
                             <br />
                         </td>
                     </tr>

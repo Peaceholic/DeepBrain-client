@@ -50,7 +50,6 @@ export function* watchUpdateCompany(){
     yield takeLatest(companyActions.updateCompanyRequest, updateCompany)
 }
  
-
 function* deleteCompany(company: CompanyType){
     try{
         const response : CompanySuccessType = yield deleteCompanyApi(company.payload)
